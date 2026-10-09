@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BŌL NUTRITION — MASS &amp; BOWL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo"><span class="dot"></span> BŌL NUTRITION</div>
+    <nav><ul>
+      <li><a href="javascript:void(0)" onclick="scrollToSection('accueil')">Accueil</a></li>
+      <li><a href="javascript:void(0)" onclick="scrollToSection('produits')">Produits</a></li>
+      <li><a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <button class="cart-btn" onclick="toggleCart(true)" aria-label="Panier">
+        🛒<span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section id="accueil" class="hero" style="padding-top:100px;">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">● 100% ingrédients locaux</div>
+      <h1>PRENDS DU<br>POIDS. PAS<br>DE <span>FAÇONS.</span></h1>
+      <p class="lede">MASS & BOWL est une bouillie hyper-calorique prête en 3 minutes, faite de riz, maïs, biscuits et spaghettis. +500 kcal par portion, pour prendre de la masse sans se ruiner.</p>
+      <div class="cta-row">
+        <a href="javascript:void(0)" onclick="scrollToSection('produits')" class="btn btn-primary">Voir les produits →</a>
+        <a href="https://wa.me/242056833801?text=Bonjour%20BŌL%20NUTRITION%2C%20j'ai%20une%20question%20sur%20MASS%20%26%20BOWL." target="_blank" class="btn btn-ghost">💬 Nous écrire</a>
+      </div>
+    </div>
+    <div class="stamp-visual">
+      <div class="sack">
+        <div class="sack-inner">
+          <div class="big">+500</div>
+          <div class="small">KCAL / PORTION</div>
+        </div>
+      </div>
+      <div class="badge-float badge-1">PRÊT<br>EN 3<br>MIN</div>
+      <div class="badge-float badge-2">100%<br>LOCAL</div>
+    </div>
+  </div>
+</section>
+
+<div class="ticket-bar">
+  <div class="ticket">
+    <div><div class="num">500+</div><div class="lbl">Kcal / portion</div></div>
+    <div><div class="num">3</div><div class="lbl">Minutes de prépa</div></div>
+    <div><div class="num">4</div><div class="lbl">Ingrédients locaux</div></div>
+    <div><div class="num">2</div><div class="lbl">Formats disponibles</div></div>
+  </div>
+</div>
+
+<section id="produits">
+  <div class="section-head">
+    <div class="section-eyebrow">Nos formats</div>
+    <h2>Choisis ton sachet</h2>
+    <p>Deux formats, un seul objectif : prendre du poids simplement. Ajoute de l'eau chaude ou du lait, mélange, c'est prêt.</p>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-top">
+        <div class="stitch"></div>
+        <div class="weight">500 G</div>
+        <div class="portions">FORMAT DÉCOUVERTE · ~16 PORTIONS</div>
+      </div>
+      <div class="product-body">
+        <p>Idéal pour découvrir MASS & BOWL et tester ta dose quotidienne avant de passer au grand format.</p>
+        <div>
+          <div class="price-row">
+            <div class="price">1 000<span class="fcfa">FCFA</span></div>
+            <div class="qty-row">
+              <button class="qty-btn" onclick="changeQty('d500',-1)">−</button>
+              <span id="qty-d500">1</span>
+              <button class="qty-btn" onclick="changeQty('d500',1)">+</button>
+            </div>
+          </div>
+          <p class="price-note">Prix confirmé.</p>
+        </div>
+        <button class="btn btn-primary add-btn" onclick="addToCart('d500','MASS & BOWL — 500g (Découverte)',1000)">Ajouter au panier</button>
+      </div>
+    </div>
+
+    <div class="product-card featured">
+      <span class="tag-best">★ MEILLEUR RAPPORT</span>
+      <div class="product-top">
+        <div class="stitch"></div>
+        <div class="weight">1 KG</div>
+        <div class="portions">FORMAT MAXI MASSE · ~33 PORTIONS</div>
+      </div>
+      <div class="product-body">
+        <p>Le format qui tient sur la durée. Une portion par jour pendant plus d'un mois pour construire ta masse sans interruption.</p>
+        <div>
+          <div class="price-row">
+            <div class="price">1 500<span class="fcfa">FCFA</span></div>
+            <div class="qty-row">
+              <button class="qty-btn" onclick="changeQty('m1kg',-1)">−</button>
+              <span id="qty-m1kg">1</span>
+              <button class="qty-btn" onclick="changeQty('m1kg',1)">+</button>
+            </div>
+          </div>
+          <p class="price-note">Prix confirmé.</p>
+        </div>
+        <button class="btn btn-primary add-btn" onclick="addToCart('m1kg','MASS & BOWL — 1kg (Maxi Masse)',1500)">Ajouter au panier</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-head">
+    <div class="section-eyebrow">Une question ?</div>
+    <h2>Parlons-en sur WhatsApp</h2>
+    <p>Commandes, conseils nutrition, suivi de livraison — tout se passe directement sur WhatsApp.</p>
+  </div>
+  <a href="https://wa.me/242056833801?text=Bonjour%20BŌL%20NUTRITION%2C%20je%20souhaite%20passer%20une%20commande." target="_blank" class="btn btn-whatsapp">💬 Écrire sur WhatsApp</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>BŌL NUTRITION — un produit du Groupe Lumière · 2025/2026</p>
+    <p>Pointe-Noire, Congo</p>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="toggleCart(false)"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Ton panier</h3>
+    <button class="close-btn" onclick="toggleCart(false)">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <div class="empty-cart">Ton panier est vide pour l'instant.</div>
+  </div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Total</span><span id="cartTotal">0 FCFA</span></div>
+    <button class="btn btn-primary add-btn" onclick="openCheckout()">Passer commande</button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-card">
+    <div class="step-lbl" id="modalStep">ÉTAPE 1/2 — TES INFOS</div>
+
+    <div id="stepInfo">
+      <h3>Où livrer ta commande ?</h3>
+      <div class="field"><label>Nom complet</label><input type="text" id="custName" placeholder="Ex: Marc Loemba"></div>
+      <div class="field"><label>Téléphone</label><input type="text" id="custPhone" placeholder="Ex: 06 XXX XX XX"></div>
+      <div class="field"><label>Adresse / quartier de livraison</label><textarea rows="2" id="custAddress" placeholder="Ex: Pointe-Noire, Tié-Tié..."></textarea></div>
+      <button class="btn btn-primary add-btn" onclick="goToPayment()">Continuer →</button>
+    </div>
+
+    <div id="stepPay" style="display:none;">
+      <h3>Comment veux-tu payer ?</h3>
+      <p style="font-size:0.85rem; color:rgba(246,237,224,0.6); margin:10px 0 16px;">Choisis ton opérateur Mobile Money.</p>
+      <div class="pay-options">
+        <div class="pay-option" id="opt-airtel" onclick="selectPay('Airtel Money')">📱 Airtel Money</div>
+        <div class="pay-option" id="opt-mtn" onclick="selectPay('MTN Mobile Money')">📱 MTN MoMo</div>
+      </div>
+      <div class="pay-instructions" id="payInstructions"></div>
+      <a class="btn btn-whatsapp add-btn" id="confirmWaBtn" href="#" target="_blank" style="display:none; justify-content:center;">💬 Confirmer ma commande sur WhatsApp</a>
+    </div>
+
+    <button class="btn btn-ghost add-btn" style="margin-top:10px;" onclick="closeCheckout()">Annuler</button>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verifier-html:
+    name: Valider le HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npx --yes html-validate index.html
+
+  verifier-liens:
+    name: Vérifier les liens
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          # les liens wa.me et Google Fonts sont exclus (réponses variables / non pertinentes)
+          args: --no-progress --exclude 'wa\.me' --exclude 'fonts\.(googleapis|gstatic)\.com' index.html
+          fail: true
